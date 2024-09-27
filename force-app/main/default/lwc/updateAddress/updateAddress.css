@@ -1,0 +1,28 @@
+.titulo {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.align{
+    width: 100%;
+    margin: 15px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items:flex-start;
+}
+.searchDiv{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+
+}
+
+.button{
+    margin-top: 15px;
+}
+.inputsDiv{
+    width: 90%;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,50 @@
+<template>
+  <lightning-card>
+    <form>
+        <div class="align">
+            <h1 class="titulo">Update Contact Address For: {contactName}</h1>
+            <div class="searchDiv">
+                <input type="text" class="slds-input .slds-size_4-of-7" placeholder="New Zip/Postal Code" onkeyup={handleChange}></input>
+                <lightning-button
+                variant="brand"
+                title="Search"
+                label="Search"
+                onclick={searchHandler}
+              >
+              </lightning-button>
+            </div>
+            <template lwc:if={isVisible}>
+              <div class="inputsDiv">
+                  <label class="slds-form-element__label" for="text-input-id-51">Mailing Street</label>
+                  
+                    <input type="text" value={data.logradouro} disabled placeholder="" class="slds-input .slds-size_4-of-7" />
+            
+                </div>
+              <div class="inputsDiv">
+                  <label class="slds-form-element__label" for="text-input-id-51">Mailing City
+                </label>
+        
+                    <input type="text" value={data.localidade} disabled placeholder="" class="slds-input" />
+    
+                </div>
+              <div class="inputsDiv">
+                  <label class="slds-form-element__label" for="text-input-id-51">Mailing State/Province
+                </label>
+            
+                    <input type="text" value={data.estado} disabled placeholder="" class="slds-input" />
+                
+                </div>
+            </template>
+            <lightning-button
+            class="button"
+              variant="brand"
+              title="Submit"
+              label="Save"
+              disabled={visible}
+              onclick={submitHandler}
+            >
+            </lightning-button>
+          </div>
+    </form>
+  </lightning-card>
+</template>

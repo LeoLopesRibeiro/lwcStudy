@@ -1,0 +1,38 @@
+<template>
+  <lightning-card title="Conditional Rendering">
+    <div>
+      <!-- <button onclick={handleChange}>Click</button> -->
+      <lightning-button
+        variant="brand"
+        label="Show Data"
+        title="Show data"
+        onclick={handleClick}
+        class="slds-m-left_x-small"
+      ></lightning-button>
+
+      <template lwc:if={isVisible}>
+        <div>
+          <h1>Visible {isVisible}</h1>
+          <p style="color: blue">$$</p>
+        </div>
+      </template>
+      <template lwc:else>
+        <div>
+          <h1>Not visible {isVisible}</h1>
+        </div>
+      </template>
+    </div>
+    <div>
+      <lightning-input
+        label="Type hello to see the data"
+        onkeyup={handleChange}
+      ></lightning-input>
+      <template lwc:if={hello}>
+        <div>
+          <h1>You tiped hello</h1>
+          <p style="color: blue">Congratulations</p>
+        </div>
+      </template>
+    </div>
+  </lightning-card>
+</template>

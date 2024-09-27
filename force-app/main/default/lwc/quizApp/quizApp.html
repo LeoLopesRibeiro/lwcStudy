@@ -1,0 +1,65 @@
+<template>
+  <lightning-card title="QuizApp">
+    <div class="slds-m-around_medium">
+      <form>
+        <template lwc:if={visible}>
+            <h1 class={fullScore}>Respostas certas: {correctAnswers}</h1>
+        </template>
+        <template for:each={myQuestions} for:item="quiz">
+          <div key={quiz.id}>
+            <p>{quiz.question}</p>
+            <div class="slds-grid slds-gutters slds-grid_align-space">
+              <div class="slds-col slds-m-around_medium slds-align_absolute-center">
+                <input
+                  class="slds-m-right_x-small"
+                  type="radio"
+                  name={quiz.id}
+                  value="a"
+                  onchange={changeHandler}
+                />
+                {quiz.answers.a}
+              </div>
+              <div class="slds-col slds-m-around_medium slds-align_absolute-center">
+                <input
+                  class="slds-m-right_x-small"
+                  type="radio"
+                  name={quiz.id}
+                  value="b"
+                  onchange={changeHandler}
+                />
+                {quiz.answers.b}
+              </div>
+              <div class="slds-col slds-m-around_medium slds-align_absolute-center">
+                <input
+                  class="slds-m-right_x-small"
+                  type="radio"
+                  name={quiz.id}
+                  value="c"
+                  onchange={changeHandler}
+                />
+                {quiz.answers.c}
+              </div>
+            </div>
+          </div>
+        </template>
+        <lightning-button
+          variant="brand"
+          type="submit"
+          label="Submit"
+          title="Submit"
+          disabled={allNotSelected}
+          onclick={submitHandler}
+          class="slds-m-around_medium">
+        </lightning-button>
+        <lightning-button
+        variant="brand"
+        type="reset"
+        label="Reset"
+        title="Reset"
+        onclick={resetHandler}
+        class="slds-m-around_medium">
+      </lightning-button>
+      </form>
+    </div>
+  </lightning-card>
+</template>

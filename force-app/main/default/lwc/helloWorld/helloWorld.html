@@ -1,0 +1,31 @@
+<template>
+    <lightning-card  title="Two way data binding">
+        <lightning-button label="New" slot="actions"></lightning-button>
+        <div class="slds-p-horizontal_small">
+            <!-- <input type="text" placeholder="Tittle" onkeyup={changeHandler}/> -->
+            <lightning-input type="text" label="Enter title" placeholder="type here..." 
+            onkeyup={changeHandler}></lightning-input>
+            <h1>Nome: {fullName} title: {title}</h1>
+        </div>
+    </lightning-card>
+
+    <lightning-card  title="@track properties">
+        <lightning-button label="New" slot="actions"></lightning-button>
+        <div class="slds-p-horizontal_small">
+            <h1>Hello World name: {addres.country}</h1>
+            <!-- <input type="text" placeholder="Tittle" onkeyup={changeHandler}/> -->
+            <lightning-input type="text" label="Enter city name" placeholder="type here..." 
+            onkeyup={trackHandler}></lightning-input>
+            <h1>{addres.city} é a minha cidade</h1>
+        </div>
+    </lightning-card>
+    <lightning-card  title="Getter Demo">
+       
+        <div class="slds-p-horizontal_small">
+            <h1>First user get: {firstUser}</h1>
+            <h1>Soma: {sumNum}</h1>
+         </div>
+    </lightning-card>
+
+   
+</template>
